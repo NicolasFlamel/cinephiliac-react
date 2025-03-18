@@ -1,7 +1,7 @@
 import './App.css';
 import { useRef, useState } from 'react';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { NextUIProvider } from '@nextui-org/react';
+import { HeroUIProvider } from '@heroui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Game, Home, Scoreboard } from './pages';
 import { Header } from './components';
@@ -20,7 +20,7 @@ function App() {
   else docClassList.remove('dark');
 
   return (
-    <NextUIProvider navigate={navigate}>
+    <HeroUIProvider navigate={navigate}>
       <div className="App grid min-h-screen sm:grid-rows-[0.3fr_auto_1fr]">
         <div className="container mx-auto p-4 bg-foreground-200 max-w-screen-lg min-h-[600px] sm:row-start-2">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -50,7 +50,7 @@ function App() {
           </main>
         </div>
       </div>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 }
 

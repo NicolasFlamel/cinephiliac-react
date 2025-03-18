@@ -8,7 +8,7 @@ import {
   TableCell,
   getKeyValue,
   Tooltip,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { DeleteIcon } from 'components/DeleteIcon';
 import useLocalScores from 'hooks/useLocalScores';
 

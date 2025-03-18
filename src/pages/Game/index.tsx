@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   Divider,
-} from '@nextui-org/react';
+} from '@heroui/react';
 
 const Game = ({ score }: GameProps) => {
   const qClient = useQueryClient();

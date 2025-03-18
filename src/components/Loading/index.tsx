@@ -1,4 +1,4 @@
-import { CircularProgress } from '@nextui-org/react';
+import { CircularProgress } from '@heroui/react';
 
 interface LoadingProps extends React.HTMLAttributes<HTMLElement> {
   value?: number;

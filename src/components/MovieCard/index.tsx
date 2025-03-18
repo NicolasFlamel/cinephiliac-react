@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { MovieWithStats } from 'types';
-import { Image } from '@nextui-org/react';
+import { Image } from '@heroui/react';
 import { UseQueryResult } from '@tanstack/react-query';
 import noImg from 'assets/img/no-image-placeholder.png';
 import { useMutateMoviePair } from 'api';

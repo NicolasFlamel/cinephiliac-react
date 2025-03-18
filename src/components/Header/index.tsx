@@ -14,7 +14,7 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Switch,
-} from '@nextui-org/react';
+} from '@heroui/react';
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
   darkMode: boolean;

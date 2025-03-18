@@ -5,7 +5,7 @@ import {
   CardHeader,
   Divider,
   Link,
-} from '@nextui-org/react';
+} from '@heroui/react';
 
 interface ErrorProps extends React.HTMLAttributes<HTMLElement> {
   error: Error;

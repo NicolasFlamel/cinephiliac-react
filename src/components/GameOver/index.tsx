@@ -8,7 +8,7 @@ import {
   CardHeader,
   Divider,
   Input,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { addScore } from 'hooks/useLocalScores';
 import { useGameState } from 'context/GameContext';
 

@@ -6,7 +6,7 @@ import {
   CardBody,
   Select,
   SelectItem,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { genres, gameModes } from './data';
 import { useGameDispatch, useGameState } from 'context/GameContext';
 
@@ -71,7 +71,7 @@ const Home = () => {
               defaultSelectedKeys={[gameMode]}
             >
               {gameModes.map((gameModeData) => (
-                <SelectItem key={gameModeData.value} value={gameModeData.value}>
+                <SelectItem key={gameModeData.value}>
                   {gameModeData.label}
                 </SelectItem>
               ))}
@@ -83,9 +83,7 @@ const Home = () => {
               defaultSelectedKeys={[gameGenre]}
             >
               {genres.map((genre) => (
-                <SelectItem key={genre.value} value={genre.value}>
-                  {genre.label}
-                </SelectItem>
+                <SelectItem key={genre.value}>{genre.label}</SelectItem>
               ))}
             </Select>
             <Button type="submit" color="primary" className="md:col-span-2">
