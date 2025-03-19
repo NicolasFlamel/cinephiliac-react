@@ -47,12 +47,12 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <h1 className="font-bold text-inherit text-2xl">Cinephiliac</h1>
+          <h1 className="text-2xl font-bold text-inherit">Cinephiliac</h1>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex gap-4 flex-wrap"
+        className="hidden flex-wrap gap-4 sm:flex"
         justify="center"
       >
         <NavbarItem isActive={location.pathname === '/'}>
@@ -62,7 +62,7 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
           <Link href={'/scoreboard'}>Scoreboard</Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end" className="hidden sm:flex gap-4 flex-wrap">
+      <NavbarContent justify="end" className="hidden flex-wrap gap-4 sm:flex">
         <NavbarItem className="flex flex-wrap">
           <Switch
             size="lg"
@@ -75,7 +75,7 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
       </NavbarContent>
 
       {/* Navbar mobile menu */}
-      <NavbarMenu className="m-4 p-4 gap-8 w-auto">
+      <NavbarMenu className="m-4 w-auto gap-8 p-4">
         <NavbarMenuItem>
           <Link href={'/'} size="lg" onClick={() => setIsMenuOpen(false)}>
             Home

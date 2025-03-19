@@ -17,8 +17,8 @@ const Fallback = ({ error }: ErrorProps) => {
 
   return (
     <section className="flex justify-center">
-      <Card className="grid text-center m-12 justify-center">
-        <CardHeader className="grid grid-rows-2 gap-4 justify-center">
+      <Card className="m-12 grid justify-center text-center">
+        <CardHeader className="grid grid-rows-2 justify-center gap-4">
           <h1 className="text-2xl">Oops!</h1>
           <p>Sorry, an unexpected error has occurred.</p>
         </CardHeader>

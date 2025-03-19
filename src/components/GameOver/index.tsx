@@ -55,7 +55,7 @@ const GameOver = ({ score }: GameProps) => {
             {/* user inputs info for scoreboard */}
             <form
               onSubmit={handleSubmit}
-              className="flex w-full flex-wrap md:flex-nowrap gap-4"
+              className="flex w-full flex-wrap gap-4 md:flex-nowrap"
             >
               <Input
                 type="text"

@@ -62,7 +62,7 @@ const Home = () => {
           <form
             id="game-form"
             onSubmit={formSubmitHandler}
-            className="grid grid-rows-3 md:grid-rows-2 md:grid-cols-2 gap-4 items-center justify-items-center"
+            className="grid grid-rows-3 items-center justify-items-center gap-4 md:grid-cols-2 md:grid-rows-2"
           >
             <Select
               label="Select a mode"

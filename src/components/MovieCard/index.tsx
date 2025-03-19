@@ -33,7 +33,7 @@ const MovieCard = ({ movieData, showStat }: MovieCardProps) => {
   else if (isError) return <h1>Error, grabbing new movie</h1>;
 
   return (
-    <section className="grid grid-rows-[auto max-content auto] gap-4">
+    <section className="grid-rows-[auto max-content auto] grid gap-4">
       <h2 className="row-start-1">
         {gameMode +
           ': ' +
@@ -50,7 +50,7 @@ const MovieCard = ({ movieData, showStat }: MovieCardProps) => {
         src={isPending ? undefined : data.posterUrl || noImg}
         alt={data.title + ' poster'}
       />
-      <h2 className="mt-auto row-start-3">{data.title}</h2>
+      <h2 className="row-start-3 mt-auto">{data.title}</h2>
     </section>
   );
 };

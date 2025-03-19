@@ -22,7 +22,7 @@ function App() {
   return (
     <HeroUIProvider navigate={navigate}>
       <div className="App grid min-h-screen sm:grid-rows-[0.3fr_auto_1fr]">
-        <div className="container mx-auto p-4 bg-foreground-200 max-w-screen-lg min-h-[600px] sm:row-start-2">
+        <div className="container mx-auto min-h-[600px] max-w-screen-lg bg-foreground-200 p-4 sm:row-start-2">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
           <main>
             <Routes>

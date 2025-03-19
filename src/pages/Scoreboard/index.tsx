@@ -28,7 +28,7 @@ const Scoreboard = () => {
     <section>
       {board.map(([mode, scores]) => (
         <section key={mode} className="my-4">
-          <h2 className="my-2 font-bold text-inherit text-2xl">Box Office</h2>
+          <h2 className="my-2 text-2xl font-bold text-inherit">Box Office</h2>
           <ScoreTable mode={mode} scores={scores} deleteScore={deleteScore} />
         </section>
       ))}
@@ -62,7 +62,7 @@ const ScoreTable = ({ mode, scores, deleteScore }: ScoreTableProps) => {
       <Tooltip color="danger" content="Delete entry">
         <span
           onClick={handleDelete(score.id)}
-          className="text-lg text-danger cursor-pointer active:opacity-50"
+          className="cursor-pointer text-lg text-danger active:opacity-50"
         >
           <DeleteIcon />
         </span>

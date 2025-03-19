@@ -82,21 +82,21 @@ const Game = ({ score }: GameProps) => {
   };
 
   return (
-    <section className="flex justify-center w-full">
-      <Card className="grid justify-center gap-4 p-4 w-full">
-        <CardHeader className="row-start-1 justify-center min-h-12">
-          <h2 className="text-center max-w-max">
+    <section className="flex w-full justify-center">
+      <Card className="grid w-full justify-center gap-4 p-4">
+        <CardHeader className="row-start-1 min-h-12 justify-center">
+          <h2 className="max-w-max text-center">
             Does <em> {pairQuery.data[1].title} </em>
             have a higher or lower {gameMode} amount than
             <em> {pairQuery.data[0].title}</em>?
           </h2>
         </CardHeader>
         <Divider />
-        <CardBody className="justify-center overflow-hidden md:min-h-[650px] min-h-[1060px]">
+        <CardBody className="min-h-[1060px] justify-center overflow-hidden md:min-h-[650px]">
           <MovieMotion
             moviePair={[firstMovie, secondMovie]}
             backupData={pairQuery.data}
-            className="grid md:gap-4 md:grid-cols-2 md:divide-y-0 divide-y-large p-4"
+            className="grid divide-y-large p-4 md:grid-cols-2 md:gap-4 md:divide-y-0"
           />
         </CardBody>
         <CardFooter className="flex flex-wrap justify-center gap-4">

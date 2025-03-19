@@ -44,7 +44,7 @@ const MovieMotion = (props: MovieMotionProps) => {
               value={movie.data?.imdbId || backupData[index].imdbId}
               {...reorderAnimationProps}
               drag={false}
-              className="grid text-center justify-items-center gap-4 p-4"
+              className="grid justify-items-center gap-4 p-4 text-center"
             >
               <MovieCard movieData={movie} showStat={!index} />
             </Reorder.Item>
