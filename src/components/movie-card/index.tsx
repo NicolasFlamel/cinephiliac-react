@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import type { MovieWithStats } from '@/types';
-import { Image } from '@heroui/react';
 import type { UseQueryResult } from '@tanstack/react-query';
 import noImg from '@/assets/img/no-image-placeholder.png';
 import { useMutateMoviePair } from '@/api';
@@ -43,7 +42,7 @@ const MovieCard = ({ movieData, showStat }: MovieCardProps) => {
               : data.rating || 'Loading'
             : '???')}
       </h2>
-      <Image
+      <img
         width={300}
         height={400}
         className="row-start-2"

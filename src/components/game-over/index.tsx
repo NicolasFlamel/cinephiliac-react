@@ -1,23 +1,20 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
 import type { GameProps } from '@/types';
-import {
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Divider,
-  Input,
-} from '@heroui/react';
 import { addScore } from '@/hooks/use-local-scores';
 import { useGameState } from '@/context/game-context';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Separator } from '../ui/separator';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
 
 const GameOver = ({ score }: GameProps) => {
   const { gameGenre, gameMode } = useGameState();
   const username = useRef('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
     if (username.current === '') return;
 
@@ -39,8 +36,8 @@ const GameOver = ({ score }: GameProps) => {
         <CardHeader>
           <p>Game over!</p>
         </CardHeader>
-        <Divider />
-        <CardBody id="score" className="grid gap-4">
+        <Separator />
+        <CardContent id="score" className="grid gap-4">
           {/* display results */}
           <section>
             <p>You're score was: {score.current}</p>
@@ -57,19 +54,20 @@ const GameOver = ({ score }: GameProps) => {
               onSubmit={handleSubmit}
               className="flex w-full flex-wrap gap-4 md:flex-nowrap"
             >
+              <Label htmlFor={'username'}>Username</Label>
               <Input
+                id={'username'}
                 type="text"
-                label="Username"
                 name="username"
-                isRequired={true}
                 onChange={(e) => (username.current = e.target.value)}
+                required
               />
               <Button className="m-auto" type="submit" id="save-btn">
                 Submit
               </Button>
             </form>
           </section>
-        </CardBody>
+        </CardContent>
       </Card>
     </section>
   );

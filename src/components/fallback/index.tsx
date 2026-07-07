@@ -1,5 +1,11 @@
 import { Link } from 'react-router';
-import { Card, CardBody, CardFooter, CardHeader, Divider } from '@heroui/react';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 
 interface ErrorProps extends React.HTMLAttributes<HTMLElement> {
   error: Error;
@@ -16,11 +22,11 @@ const Fallback = ({ error }: ErrorProps) => {
           <h1 className="text-2xl">Oops!</h1>
           <p>Sorry, an unexpected error has occurred.</p>
         </CardHeader>
-        <Divider />
-        <CardBody>
+        <Separator />
+        <CardContent>
           <p>{isError && <i>Error: {error.message}</i>}</p>
-        </CardBody>
-        <Divider />
+        </CardContent>
+        <Separator />
         <CardFooter className="justify-center">
           <Link to={'/'}>Go Home</Link>
         </CardFooter>

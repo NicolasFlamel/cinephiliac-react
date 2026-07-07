@@ -1,19 +1,13 @@
-import { CircularProgress } from '@heroui/react';
+import { Spinner } from '@/components/ui/spinner';
 
 interface LoadingProps extends React.HTMLAttributes<HTMLElement> {
   value?: number;
 }
 
-const Loading = ({ children, value }: LoadingProps) => {
+const Loading = ({ children }: LoadingProps) => {
   return (
     <section className="grid justify-center p-4">
-      <CircularProgress
-        className="mx-auto"
-        aria-label="Loading..."
-        size="lg"
-        value={value}
-        showValueLabel={true}
-      />
+      <Spinner className="mx-auto size-12" aria-label="Loading..." />
       <section>{children}</section>
     </section>
   );

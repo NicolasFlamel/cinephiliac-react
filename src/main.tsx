@@ -5,7 +5,6 @@ import { HashRouter } from 'react-router';
 import { ThemeProvider } from './context/theme-provider';
 import App from '@/App.tsx';
 
-document.documentElement.className = 'text-foreground bg-background';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
