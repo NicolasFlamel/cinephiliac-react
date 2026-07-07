@@ -1,12 +1,12 @@
 import Dexie, { type Table } from 'dexie';
-import {
+import type {
   GameGenreType,
   MovieIndexedDB,
   MovieDBWithStats,
   MovieWithStats,
   MovieTypes,
   MovieDBWithoutStats,
-} from 'types';
+} from '@/types';
 
 class MySubClassedDexie extends Dexie {
   movies!: Table<MovieIndexedDB | MovieDBWithStats>;

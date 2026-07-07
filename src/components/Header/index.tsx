@@ -1,9 +1,9 @@
-import { ChangeEvent, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Dispatcher } from 'types';
+import { type ChangeEvent, useState } from 'react';
+import { useLocation } from 'react-router';
+import type { Dispatcher } from '@/types';
 import Sun from 'assets/img/sun.svg';
 import Moon from 'assets/img/moon.svg';
-import { Icon } from 'components';
+import { Icon } from '@/components';
 import {
   Link,
   Navbar,

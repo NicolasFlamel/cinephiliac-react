@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ScoreData } from 'types';
+import type { ScoreData } from '@/types'
 
 const key = 'cinephiliacSB';
 

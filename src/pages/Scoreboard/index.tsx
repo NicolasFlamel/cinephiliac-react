@@ -1,4 +1,4 @@
-import { GameModeType, ScoreData } from 'types';
+import type { GameModeType, ScoreData } from '@/types';
 import {
   Table,
   TableHeader,
@@ -9,8 +9,8 @@ import {
   getKeyValue,
   Tooltip,
 } from '@heroui/react';
-import { DeleteIcon } from 'components/DeleteIcon';
-import useLocalScores from 'hooks/useLocalScores';
+import { DeleteIcon } from '@/components/DeleteIcon';
+import useLocalScores from '@/hooks/useLocalScores';
 
 const Scoreboard = () => {
   const { scores, deleteScore } = useLocalScores();

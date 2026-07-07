@@ -1,5 +1,5 @@
-import { Dispatch, MutableRefObject, SetStateAction } from 'react';
-import {
+import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import type {
   MovieDatabaseApiType,
   MovieDatabaseResultsType,
   TMDBApi,

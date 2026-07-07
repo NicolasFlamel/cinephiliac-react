@@ -1,7 +1,7 @@
-import { AnimatePresence, AnimationProps, Reorder } from 'framer-motion';
-import MovieCard from 'components/MovieCard';
-import { UseQueryResult } from '@tanstack/react-query';
-import { MoviePair, MovieWithStats } from 'types';
+import { AnimatePresence, Reorder } from 'framer-motion';
+import MovieCard from '@/components/MovieCard';
+import type { UseQueryResult } from '@tanstack/react-query';
+import type { MoviePair, MovieWithStats } from '@/types';
 
 interface MovieMotionProps extends React.HTMLAttributes<HTMLElement> {
   moviePair: [
@@ -13,7 +13,7 @@ interface MovieMotionProps extends React.HTMLAttributes<HTMLElement> {
 
 const MovieMotion = (props: MovieMotionProps) => {
   const { moviePair, backupData, className } = props;
-  const reorderAnimationProps: AnimationProps = {
+  const reorderAnimationProps = {
     initial: {
       x: 100,
       y: -200,
@@ -26,7 +26,7 @@ const MovieMotion = (props: MovieMotionProps) => {
     },
     exit: { x: -100, y: 200, opacity: 0 },
     transition: { duration: 0.8 },
-  };
+  } as const;
 
   return (
     <Reorder.Group

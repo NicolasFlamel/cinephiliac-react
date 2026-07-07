@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { GameProps } from 'types';
+import { useNavigate } from 'react-router';
+import type { GameProps } from '@/types'
 import {
   Button,
   Card,
@@ -10,7 +10,7 @@ import {
   Input,
 } from '@heroui/react';
 import { addScore } from 'hooks/useLocalScores';
-import { useGameState } from 'context/GameContext';
+import { useGameState } from '@/context/GameContext';
 
 const GameOver = ({ score }: GameProps) => {
   const { gameGenre, gameMode } = useGameState();

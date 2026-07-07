@@ -1,18 +1,18 @@
 import {
-  UseQueryOptions,
-  UseQueryResult,
+  type UseQueryOptions,
+  type UseQueryResult,
   useMutation,
   useQueries,
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
-import {
+import type {
   GameGenreType,
   MovieList,
   MoviePair,
   MovieTypes,
   MovieWithStats,
-} from 'types';
+} from '@/types';
 import { fetchMovieList, fetchMovieStats, getMoviePairFn } from './queryFn';
 import { movieListFn, moviePairFn, removePairFn } from './mutationFn';
 

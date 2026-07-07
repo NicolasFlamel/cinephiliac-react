@@ -1,5 +1,5 @@
 import { QueryClient } from '@tanstack/react-query';
-import { GameGenreType, MoviePair, MovieTypes } from 'types';
+import type { GameGenreType, MoviePair, MovieTypes } from '@/types'
 import { randomIndex } from './helpers';
 
 // Fn for mutation when getting next movie in pair

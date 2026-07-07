@@ -8,7 +8,7 @@ import {
   SelectItem,
 } from '@heroui/react';
 import { genres, gameModes } from './data';
-import { useGameDispatch, useGameState } from 'context/GameContext';
+import { useGameDispatch, useGameState } from '@/context/GameContext';
 
 interface FormElements extends HTMLFormControlsCollection {
   game: HTMLInputElement;

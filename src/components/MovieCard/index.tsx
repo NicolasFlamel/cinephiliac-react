@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { MovieWithStats } from 'types';
+import type { MovieWithStats } from '@/types';
 import { Image } from '@heroui/react';
-import { UseQueryResult } from '@tanstack/react-query';
+import type { UseQueryResult } from '@tanstack/react-query';
 import noImg from 'assets/img/no-image-placeholder.png';
-import { useMutateMoviePair } from 'api';
-import { removeMovieFromDB } from 'utils/MovieDB';
-import { useGameState } from 'context/GameContext';
+import { useMutateMoviePair } from '@/api';
+import { removeMovieFromDB } from '@/lib/movie-db';
+import { useGameState } from '@/context/GameContext';
 
 interface MovieCardProps {
   movieData: UseQueryResult<MovieWithStats, Error>;

@@ -1,20 +1,20 @@
 import {
-  MovieType,
-  MovieWithStats,
-  MovieTypes,
-  MoviePair,
+  type MovieType,
+  type MovieWithStats,
+  type MovieTypes,
+  type MoviePair,
   isGameGenreType,
-} from 'types';
-import { MovieStatsAPI, TMDBExternalIds } from 'types/apiTypes';
+} from '@/types';
+import type { MovieStatsAPI, TMDBExternalIds } from '@/types/apiTypes';
 import {
   addMoviesToDB,
   getMovieFromDB,
   getMovieListFromDB,
   putMovieDataIntoDB,
-} from 'utils/MovieDB';
+} from '@/lib/movie-db';
 import { randomIndex } from './helpers';
 import { fetchMovies, getExternalIds } from './tmdbAPI';
-import { QueryFunctionContext } from '@tanstack/react-query';
+import type { QueryFunctionContext } from '@tanstack/react-query';
 
 type FetchMovieList = (
   context: QueryFunctionContext,

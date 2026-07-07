@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
-import { GameProps } from 'types';
-import { Fallback, GameOver, Loading, MovieMotion } from 'components';
-import { useGetMovieList, useMutateNextMovie, useMutateRemovePair } from 'api';
-import { useGameState } from 'context/GameContext';
+import type { GameProps } from '@/types';
+import { Fallback, GameOver, Loading, MovieMotion } from '@/components';
+import {
+  useGetMovieList,
+  useMutateNextMovie,
+  useMutateRemovePair,
+} from '@/api';
+import { useGameState } from '@/context/GameContext';
 import { useQueryClient } from '@tanstack/react-query';
 import {
   Button,
@@ -74,7 +78,7 @@ const Game = ({ score }: GameProps) => {
     if (!correct) return gameOver();
 
     score.current++;
-    listQuery.data.length > 0 ? nextMovie() : gameOver();
+    (listQuery.data.length > 0 ? nextMovie : gameOver)();
   };
 
   const gameOver = () => {
