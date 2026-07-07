@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { GameProvider } from '@/context/GameContext';
-import { Game, Home, Scoreboard } from '@/pages';
+import { GameProvider } from '@/context/game-context';
 import { Header } from '@/components';
+import { HomePage } from './pages/home/page';
+import { GamePage } from './pages/game/page';
+import { ScoreboardPage } from './pages/scoreboard/page';
 
 const queryClient = new QueryClient();
 
@@ -26,7 +28,7 @@ function App() {
               path="/"
               element={
                 <GameProvider>
-                  <Home />
+                  <HomePage />
                 </GameProvider>
               }
             />
@@ -35,12 +37,12 @@ function App() {
               element={
                 <GameProvider>
                   <QueryClientProvider client={queryClient}>
-                    <Game score={score} />
+                    <GamePage score={score} />
                   </QueryClientProvider>
                 </GameProvider>
               }
             />
-            <Route path="/scoreboard" element={<Scoreboard />} />
+            <Route path="/scoreboard" element={<ScoreboardPage />} />
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
         </main>

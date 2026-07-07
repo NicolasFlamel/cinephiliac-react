@@ -1,9 +1,9 @@
-import Fallback from './Fallback';
-import GameOver from './GameOver';
-import Header from './Header';
-import Icon from './Icon';
-import Loading from './Loading';
-import MovieCard from './MovieCard';
-import MovieMotion from './MovieMotion';
+import Fallback from './fallback';
+import GameOver from './game-over';
+import Header from './header';
+import Icon from './icon';
+import Loading from './loading';
+import MovieCard from './movie-card';
+import MovieMotion from './movie-motion';
 
 export { Fallback, GameOver, Header, Icon, Loading, MovieCard, MovieMotion };

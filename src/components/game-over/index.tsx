@@ -9,8 +9,8 @@ import {
   Divider,
   Input,
 } from '@heroui/react';
-import { addScore } from '@/hooks/useLocalScores';
-import { useGameState } from '@/context/GameContext';
+import { addScore } from '@/hooks/use-local-scores';
+import { useGameState } from '@/context/game-context';
 
 const GameOver = ({ score }: GameProps) => {
   const { gameGenre, gameMode } = useGameState();

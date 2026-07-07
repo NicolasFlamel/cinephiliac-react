@@ -6,7 +6,7 @@ import {
   useMutateNextMovie,
   useMutateRemovePair,
 } from '@/api';
-import { useGameState } from '@/context/GameContext';
+import { useGameState } from '@/context/game-context';
 import { useQueryClient } from '@tanstack/react-query';
 import {
   Button,
@@ -17,7 +17,7 @@ import {
   Divider,
 } from '@heroui/react';
 
-const Game = ({ score }: GameProps) => {
+export const GamePage = ({ score }: GameProps) => {
   const qClient = useQueryClient();
   const { gameGenre, gameMode } = useGameState();
   const [gameIsOver, setGameIsOver] = useState(false);
@@ -115,5 +115,3 @@ const Game = ({ score }: GameProps) => {
     </section>
   );
 };
-
-export default Game;

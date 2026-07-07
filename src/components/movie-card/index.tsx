@@ -5,7 +5,7 @@ import type { UseQueryResult } from '@tanstack/react-query';
 import noImg from 'assets/img/no-image-placeholder.png';
 import { useMutateMoviePair } from '@/api';
 import { removeMovieFromDB } from '@/lib/movie-db';
-import { useGameState } from '@/context/GameContext';
+import { useGameState } from '@/context/game-context';
 
 interface MovieCardProps {
   movieData: UseQueryResult<MovieWithStats, Error>;

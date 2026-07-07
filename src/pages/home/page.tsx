@@ -8,7 +8,7 @@ import {
   SelectItem,
 } from '@heroui/react';
 import { genres, gameModes } from './data';
-import { useGameDispatch, useGameState } from '@/context/GameContext';
+import { useGameDispatch, useGameState } from '@/context/game-context';
 
 interface FormElements extends HTMLFormControlsCollection {
   game: HTMLInputElement;
@@ -19,12 +19,12 @@ interface YourFormElement extends HTMLFormElement {
   readonly elements: FormElements;
 }
 
-const Home = () => {
+export const HomePage = () => {
   const navigate = useNavigate();
   const { gameGenre, gameMode } = useGameState();
   const { setGameGenre, setGameMode } = useGameDispatch();
 
-  const formSubmitHandler = (e: React.FormEvent<YourFormElement>) => {
+  const formSubmitHandler = (e: React.SubmitEvent<YourFormElement>) => {
     e.preventDefault();
     const { currentTarget } = e;
     const game = currentTarget.game.value;
@@ -95,5 +95,3 @@ const Home = () => {
     </section>
   );
 };
-
-export default Home;

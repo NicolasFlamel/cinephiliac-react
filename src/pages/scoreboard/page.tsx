@@ -10,9 +10,9 @@ import {
   Tooltip,
 } from '@heroui/react';
 import { DeleteIcon } from '@/components/DeleteIcon';
-import useLocalScores from '@/hooks/useLocalScores';
+import useLocalScores from '@/hooks/use-local-scores';
 
-const Scoreboard = () => {
+export const ScoreboardPage = () => {
   const { scores, deleteScore } = useLocalScores();
 
   const boxOfficeScores = scores.filter(
@@ -88,5 +88,3 @@ const ScoreTable = ({ mode, scores, deleteScore }: ScoreTableProps) => {
     </Table>
   );
 };
-
-export default Scoreboard;

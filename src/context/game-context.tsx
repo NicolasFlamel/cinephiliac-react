@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import {
-  Dispatch,
-  SetStateAction,
+  type Dispatch,
+  type SetStateAction,
   createContext,
   useContext,
   useState,

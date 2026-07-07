@@ -13,8 +13,8 @@ import type {
   MovieTypes,
   MovieWithStats,
 } from '@/types';
-import { fetchMovieList, fetchMovieStats, getMoviePairFn } from './queryFn';
-import { movieListFn, moviePairFn, removePairFn } from './mutationFn';
+import { fetchMovieList, fetchMovieStats, getMoviePairFn } from './queries';
+import { movieListFn, moviePairFn, removePairFn } from './mutations';
 
 type UseGetMovieListType = (
   gameGenre: GameGenreType,
