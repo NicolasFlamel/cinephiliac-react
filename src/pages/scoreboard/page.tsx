@@ -1,16 +1,15 @@
 import type { GameModeType, ScoreData } from '@/types';
+import useLocalScores from '@/hooks/use-local-scores';
+import { Button } from '@/components/ui/button';
+import { Trash2 } from 'lucide-react';
 import {
   Table,
-  TableHeader,
-  TableColumn,
   TableBody,
-  TableRow,
   TableCell,
-  getKeyValue,
-  Tooltip,
-} from '@heroui/react';
-import { DeleteIcon } from '@/components/delete-icon';
-import useLocalScores from '@/hooks/use-local-scores';
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 export const ScoreboardPage = () => {
   const { scores, deleteScore } = useLocalScores();
@@ -25,11 +24,20 @@ export const ScoreboardPage = () => {
   ] as const;
 
   return (
-    <section>
-      {board.map(([mode, scores]) => (
-        <section key={mode} className="my-4">
-          <h2 className="my-2 text-2xl font-bold text-inherit">Box Office</h2>
-          <ScoreTable mode={mode} scores={scores} deleteScore={deleteScore} />
+    <section className={'flex flex-col gap-8'}>
+      {board.map(([mode, boardScores]) => (
+        <section
+          key={mode}
+          className={'flex flex-col gap-4 max-h-[min(100vh,500px)] py-4'}
+        >
+          <h2 className="text-2xl font-bold text-inherit">
+            {mode === 'Box-Office' ? 'Box Office Mode' : 'Ratings Mode'}
+          </h2>
+          <ScoreTable
+            mode={mode}
+            scores={boardScores}
+            deleteScore={deleteScore}
+          />
         </section>
       ))}
     </section>
@@ -53,37 +61,36 @@ const ScoreTable = ({ mode, scores, deleteScore }: ScoreTableProps) => {
     { key: 'genre', label: 'Genre' },
     { key: 'action', label: 'Action' },
   ];
-  const createTableRowsObj = (score: ScoreData) => ({
-    key: score.id,
-    name: score.username,
-    score: score.score,
-    genre: score.gameGenre,
-    action: (
-      <Tooltip color="danger" content="Delete entry">
-        <span
-          onClick={handleDelete(score.id)}
-          className="cursor-pointer text-lg text-danger active:opacity-50"
-        >
-          <DeleteIcon />
-        </span>
-      </Tooltip>
-    ),
-  });
-  const rows = scores.map(createTableRowsObj);
 
   return (
-    <Table color="default" selectionMode="single" aria-label={mode + ' scores'}>
-      <TableHeader columns={columns}>
-        {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+    <Table aria-label={mode + ' scores'}>
+      <TableHeader>
+        <TableRow>
+          {columns.map(({ key, label }) => (
+            <TableHead key={key}>{label}</TableHead>
+          ))}
+        </TableRow>
       </TableHeader>
-      <TableBody items={rows}>
-        {(item) => (
-          <TableRow key={item.key}>
-            {(columnKey) => (
-              <TableCell>{getKeyValue(item, columnKey)}</TableCell>
-            )}
-          </TableRow>
-        )}
+      <TableBody>
+        {scores
+          .filter((score) => score.gameMode === mode)
+          .map((score) => (
+            <TableRow key={score.id}>
+              <TableCell>{score.username}</TableCell>
+              <TableCell>{score.score}</TableCell>
+              <TableCell>{score.gameGenre}</TableCell>
+              <TableCell>
+                <Button
+                  size="icon"
+                  variant="destructive"
+                  onClick={() => handleDelete(score.id)}
+                >
+                  <Trash2 />
+                  <span className="sr-only">Delete</span>
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
       </TableBody>
     </Table>
   );
