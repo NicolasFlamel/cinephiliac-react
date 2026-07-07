@@ -51,7 +51,7 @@ export const HomePage = () => {
   };
 
   return (
-    <main>
+    <main className={'mx-4'}>
       <Card className={'max-w-xl m-auto'}>
         <CardHeader>
           <CardTitle>Welcome to Cinephiliac!</CardTitle>

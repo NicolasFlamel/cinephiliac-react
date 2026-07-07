@@ -24,7 +24,7 @@ export const ScoreboardPage = () => {
   ] as const;
 
   return (
-    <main className={'flex flex-col gap-8'}>
+    <main className={'flex flex-col gap-8 mx-4'}>
       {board.map(([mode, boardScores]) => (
         <section
           key={mode}
