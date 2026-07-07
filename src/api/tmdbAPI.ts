@@ -1,4 +1,9 @@
-import type { GameGenreType, TMDBApi, TMDBExternalIds, TMDBMovieData } from '@/types'
+import type {
+  GameGenreType,
+  TMDBApi,
+  TMDBExternalIds,
+  TMDBMovieData,
+} from '@/types';
 import { tmdbGenres } from './data';
 
 const movieDBKey = import.meta.env.VITE_TMDB_ACCESS_KEY;

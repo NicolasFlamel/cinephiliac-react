@@ -6,7 +6,7 @@ import {
   useContext,
   useState,
 } from 'react';
-import type { GameGenreType, GameModeType } from '@/types'
+import type { GameGenreType, GameModeType } from '@/types';
 
 interface IGameContext {
   gameMode: GameModeType;

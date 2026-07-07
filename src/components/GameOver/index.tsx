@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
-import type { GameProps } from '@/types'
+import type { GameProps } from '@/types';
 import {
   Button,
   Card,
@@ -9,7 +9,7 @@ import {
   Divider,
   Input,
 } from '@heroui/react';
-import { addScore } from 'hooks/useLocalScores';
+import { addScore } from '@/hooks/useLocalScores';
 import { useGameState } from '@/context/GameContext';
 
 const GameOver = ({ score }: GameProps) => {

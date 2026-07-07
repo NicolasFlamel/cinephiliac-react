@@ -1,11 +1,10 @@
 import { type ChangeEvent, useState } from 'react';
-import { useLocation } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import type { Dispatcher } from '@/types';
 import Sun from 'assets/img/sun.svg';
 import Moon from 'assets/img/moon.svg';
 import { Icon } from '@/components';
 import {
-  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -77,13 +76,13 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
       {/* Navbar mobile menu */}
       <NavbarMenu className="m-4 w-auto gap-8 p-4">
         <NavbarMenuItem>
-          <Link href={'/'} size="lg" onClick={() => setIsMenuOpen(false)}>
+          <Link to={'/'} size="lg" onClick={() => setIsMenuOpen(false)}>
             Home
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
           <Link
-            href={'/scoreboard'}
+            to={'/scoreboard'}
             size="lg"
             onClick={() => setIsMenuOpen(false)}
           >

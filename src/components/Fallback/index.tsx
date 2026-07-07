@@ -1,11 +1,5 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Divider,
-  Link,
-} from '@heroui/react';
+import { Link } from 'react-router';
+import { Card, CardBody, CardFooter, CardHeader, Divider } from '@heroui/react';
 
 interface ErrorProps extends React.HTMLAttributes<HTMLElement> {
   error: Error;
@@ -28,7 +22,7 @@ const Fallback = ({ error }: ErrorProps) => {
         </CardBody>
         <Divider />
         <CardFooter className="justify-center">
-          <Link href={'/'}>Go Home</Link>
+          <Link to={'/'}>Go Home</Link>
         </CardFooter>
       </Card>
     </section>

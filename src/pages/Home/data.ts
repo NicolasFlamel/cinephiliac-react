@@ -1,4 +1,4 @@
-import type { GameGenreType, GameModeType } from '@/types'
+import type { GameGenreType, GameModeType } from '@/types';
 
 type gameModesList = Array<{ label: string; value: GameModeType }>;
 type genresList = Array<{ label: string; value: GameGenreType }>;
