@@ -1,4 +1,4 @@
-import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import type { Dispatch, RefObject, SetStateAction } from 'react';
 import type {
   MovieDatabaseApiType,
   MovieDatabaseResultsType,
@@ -48,7 +48,7 @@ export type MovieIndexedDB = MovieDBWithoutStats | MovieDBWithStats;
 export type MovieList = MovieType | MovieIndexedDB;
 
 export interface GameProps {
-  score: MutableRefObject<number>;
+  score: RefObject<number>;
 }
 
 export interface ScoreData {

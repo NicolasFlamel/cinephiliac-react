@@ -1,14 +1,27 @@
 import { useNavigate } from 'react-router';
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  Select,
-  SelectItem,
-} from '@heroui/react';
 import { genres, gameModes } from './data';
 import { useGameDispatch, useGameState } from '@/context/game-context';
+import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { Field, FieldLabel } from '@/components/ui/field';
+import { isGameGenreType, isGameModeType } from '@/types';
 
 interface FormElements extends HTMLFormControlsCollection {
   game: HTMLInputElement;
@@ -26,72 +39,92 @@ export const HomePage = () => {
 
   const formSubmitHandler = (e: React.SubmitEvent<YourFormElement>) => {
     e.preventDefault();
-    const { currentTarget } = e;
-    const game = currentTarget.game.value;
-    const genre = currentTarget.genre.value;
+    const formData = new FormData(e.currentTarget);
+    const gameMode = formData.get('game');
+    const gameGenre = formData.get('genre');
 
-    if (!game || !genre) return;
+    if (!isGameModeType(gameMode) || !isGameGenreType(gameGenre)) return;
 
-    setGameMode(game);
-    setGameGenre(genre);
+    setGameMode(gameMode);
+    setGameGenre(gameGenre);
     navigate('/game');
   };
 
   return (
-    <section className="grid gap-4">
-      <Card>
+    <main>
+      <Card className={'max-w-xl m-auto'}>
         <CardHeader>
-          <p>Welcome to my little game!</p>
+          <CardTitle>Welcome to Cinephiliac!</CardTitle>
+          <CardDescription>
+            <p>
+              A simple higher/lower game based on movie data. Guess if the
+              second movie's stats are HIGHER or LOWER than the first. Each
+              correct answer gives you one point and your final score will be
+              saved locally to teh scoreboard.
+            </p>
+          </CardDescription>
         </CardHeader>
-        <CardBody>
-          <p>
-            It's a very simple game, you will be presented with two movie
-            titles/posters. The first movie you will be given either how much
-            gross they earned in the box-office or their overall rating. You
-            have to guess whether the second movie's box-office/ratings is
-            higher or lower compared to the first movie.
-          </p>
-          <p>
-            Each correct answer gives you one point and at the end your score
-            will be saved locally for you to see on the scoreboard
-          </p>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardBody>
+        <Separator />
+        <CardContent>
           <form
             id="game-form"
             onSubmit={formSubmitHandler}
-            className="grid grid-rows-3 items-center justify-items-center gap-4 md:grid-cols-2 md:grid-rows-2"
+            className={'grid grid-cols-2 gap-8'}
           >
-            <Select
-              label="Select a mode"
-              name="game"
-              className="max-w-xs md:justify-self-end"
-              defaultSelectedKeys={[gameMode]}
-            >
-              {gameModes.map((gameModeData) => (
-                <SelectItem key={gameModeData.value}>
-                  {gameModeData.label}
-                </SelectItem>
-              ))}
-            </Select>
-            <Select
-              label="Select a genre"
-              name="genre"
-              className="max-w-xs md:justify-self-start"
-              defaultSelectedKeys={[gameGenre]}
-            >
-              {genres.map((genre) => (
-                <SelectItem key={genre.value}>{genre.label}</SelectItem>
-              ))}
-            </Select>
-            <Button type="submit" color="primary" className="md:col-span-2">
-              Start
-            </Button>
+            <Field>
+              <FieldLabel htmlFor={'game'}>Select a mode</FieldLabel>
+              <Select
+                id={'game'}
+                name={'game'}
+                items={gameModes}
+                defaultValue={gameMode}
+              >
+                <SelectTrigger className={'w-full'}>
+                  <SelectValue placeholder={'Select a mode'} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Game mode</SelectLabel>
+                    {gameModes.map(({ label, value }) => (
+                      <SelectItem key={value} value={value}>
+                        {label}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </Field>
+            <Field>
+              <FieldLabel htmlFor={'genre'}>Select a genre</FieldLabel>
+              <Select
+                id={'genre'}
+                name={'genre'}
+                items={genres}
+                defaultValue={gameGenre}
+              >
+                <SelectTrigger className={'w-full'}>
+                  <SelectValue placeholder={'Select a genre'} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Game genre</SelectLabel>
+                    {genres.map(({ label, value }) => (
+                      <SelectItem key={value} value={value}>
+                        {label}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </Field>
           </form>
-        </CardBody>
+        </CardContent>
+        <CardFooter className={'flex-col'}>
+          <Button type="submit" form={'game-form'} className="w-full">
+            Start
+          </Button>
+        </CardFooter>
       </Card>
-    </section>
+    </main>
   );
 };
