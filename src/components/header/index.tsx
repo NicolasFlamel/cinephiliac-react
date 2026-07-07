@@ -1,9 +1,9 @@
 import { type ChangeEvent, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import type { Dispatcher } from '@/types';
-import Sun from 'assets/img/sun.svg';
-import Moon from 'assets/img/moon.svg';
-import { Icon } from '@/components';
+import Sun from '@/assets/img/sun.svg';
+import Moon from '@/assets/img/moon.svg';
+import { Icon } from '@/components/icon';
 import {
   Navbar,
   NavbarBrand,
@@ -22,7 +22,7 @@ interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
 
 type UpdateThemeParam = ChangeEvent<HTMLInputElement>;
 
-const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
+export const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const svgStyle: React.CSSProperties = { width: '1em' };

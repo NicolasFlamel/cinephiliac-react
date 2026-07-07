@@ -7,7 +7,7 @@ interface IconProps {
   className?: string;
 }
 
-const Icon = (props: IconProps) => {
+export const Icon = (props: IconProps) => {
   const { width, height, ...imgProps } = props;
 
   return <img {...imgProps} style={{ width, height }} />;

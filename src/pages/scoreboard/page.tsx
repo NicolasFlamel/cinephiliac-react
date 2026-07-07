@@ -9,7 +9,7 @@ import {
   getKeyValue,
   Tooltip,
 } from '@heroui/react';
-import { DeleteIcon } from '@/components/DeleteIcon';
+import { DeleteIcon } from '@/components/delete-icon';
 import useLocalScores from '@/hooks/use-local-scores';
 
 export const ScoreboardPage = () => {

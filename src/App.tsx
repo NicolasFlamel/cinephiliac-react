@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GameProvider } from '@/context/game-context';
-import { Header } from '@/components';
+import { Header } from '@/components/header';
 import { HomePage } from './pages/home/page';
 import { GamePage } from './pages/game/page';
 import { ScoreboardPage } from './pages/scoreboard/page';

@@ -1,5 +1,5 @@
 import { AnimatePresence, Reorder } from 'framer-motion';
-import MovieCard from '@/components/MovieCard';
+import MovieCard from '@/components/movie-card';
 import type { UseQueryResult } from '@tanstack/react-query';
 import type { MoviePair, MovieWithStats } from '@/types';
 
