@@ -1,18 +1,14 @@
-import './index.css';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { HashRouter } from 'react-router-dom';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import '@/index.css';
+import { HashRouter } from 'react-router';
+import App from '@/App.tsx';
 
 document.documentElement.className = 'text-foreground bg-background';
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
-
-root.render(
-  <React.StrictMode>
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
     <HashRouter>
       <App />
     </HashRouter>
-  </React.StrictMode>,
+  </StrictMode>,
 );
