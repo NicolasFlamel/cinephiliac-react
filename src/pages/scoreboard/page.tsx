@@ -83,7 +83,7 @@ const ScoreTable = ({ mode, scores, deleteScore }: ScoreTableProps) => {
                 <Button
                   size="icon"
                   variant="destructive"
-                  onClick={() => handleDelete(score.id)}
+                  onClick={handleDelete(score.id)}
                 >
                   <Trash2 />
                   <span className="sr-only">Delete</span>
