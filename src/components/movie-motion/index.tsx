@@ -11,7 +11,7 @@ interface MovieMotionProps extends React.HTMLAttributes<HTMLElement> {
   backupData: MoviePair;
 }
 
-const MovieMotion = (props: MovieMotionProps) => {
+export const MovieMotion = (props: MovieMotionProps) => {
   const { moviePair, backupData, className } = props;
   const reorderAnimationProps = {
     initial: {

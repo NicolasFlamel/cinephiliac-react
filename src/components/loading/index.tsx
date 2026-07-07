@@ -4,7 +4,7 @@ interface LoadingProps extends React.HTMLAttributes<HTMLElement> {
   value?: number;
 }
 
-const Loading = ({ children }: LoadingProps) => {
+export const Loading = ({ children }: LoadingProps) => {
   return (
     <section className="grid justify-center p-4">
       <Spinner className="mx-auto size-12" aria-label="Loading..." />
@@ -12,5 +12,3 @@ const Loading = ({ children }: LoadingProps) => {
     </section>
   );
 };
-
-export default Loading;

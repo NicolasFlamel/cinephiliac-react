@@ -5,6 +5,8 @@ import noImg from '@/assets/img/no-image-placeholder.png';
 import { useMutateMoviePair } from '@/api';
 import { removeMovieFromDB } from '@/lib/movie-db';
 import { useGameState } from '@/context/game-context';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 interface MovieCardProps {
   movieData: UseQueryResult<MovieWithStats, Error>;
@@ -32,25 +34,36 @@ const MovieCard = ({ movieData, showStat }: MovieCardProps) => {
   else if (isError) return <h1>Error, grabbing new movie</h1>;
 
   return (
-    <section className="grid-rows-[auto max-content auto] grid gap-4">
-      <h2 className="row-start-1">
-        {gameMode +
-          ': ' +
-          (showStat
-            ? gameMode === 'Box-Office'
-              ? data.boxOffice
-              : data.rating || 'Loading'
-            : '???')}
-      </h2>
-      <img
-        width={300}
-        height={400}
-        className="row-start-2"
-        src={isPending ? undefined : data.posterUrl || noImg}
-        alt={data.title + ' poster'}
-      />
-      <h2 className="row-start-3 mt-auto">{data.title}</h2>
-    </section>
+    <Card>
+      <CardHeader>
+        <h2
+          className={cn(
+            'rounded-md p-2',
+            showStat
+              ? 'bg-primary text-primary-foreground'
+              : 'bg-secondary text-secondary-foreground',
+          )}
+        >
+          {gameMode +
+            ': ' +
+            (showStat
+              ? gameMode === 'Box-Office'
+                ? data.boxOffice
+                : data.rating || 'Loading'
+              : '???')}
+        </h2>
+      </CardHeader>
+      <CardContent className={'flex flex-col gap-4'}>
+        <img
+          width={300}
+          height={400}
+          src={data.posterUrl || noImg}
+          alt={data.title + ' poster'}
+          className={'h-100 w-75 rounded-md'}
+        />
+        <p className="row-start-3 mt-auto">{data.title}</p>
+      </CardContent>
+    </Card>
   );
 };
 

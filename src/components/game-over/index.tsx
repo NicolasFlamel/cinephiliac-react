@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 
-const GameOver = ({ score }: GameProps) => {
+export const GameOver = ({ score }: GameProps) => {
   const { gameGenre, gameMode } = useGameState();
   const username = useRef('');
   const navigate = useNavigate();
@@ -72,5 +72,3 @@ const GameOver = ({ score }: GameProps) => {
     </section>
   );
 };
-
-export default GameOver;

@@ -11,7 +11,7 @@ interface ErrorProps extends React.HTMLAttributes<HTMLElement> {
   error: Error;
 }
 
-const Fallback = ({ error }: ErrorProps) => {
+export const Fallback = ({ error }: ErrorProps) => {
   console.error('Error component', error);
   const isError = error instanceof Error;
 
@@ -34,5 +34,3 @@ const Fallback = ({ error }: ErrorProps) => {
     </section>
   );
 };
-
-export default Fallback;
