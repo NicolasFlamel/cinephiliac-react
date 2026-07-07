@@ -5,7 +5,7 @@ import type {
   TMDBApi,
   TMDBMovieData,
   TMDBExternalIds,
-} from './apiTypes';
+} from './api';
 
 const gameModes = ['Box-Office', 'Ratings'] as const;
 const genres = [
