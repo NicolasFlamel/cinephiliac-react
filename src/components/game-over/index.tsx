@@ -47,11 +47,11 @@ export const GameOver = ({ score }: GameProps) => {
   return (
     <Card className={'mx-auto w-lg'}>
       <CardHeader className={'justify-center'}>
-        <CardTitle className={'text-6xl'}>Game over!</CardTitle>
+        <CardTitle className={'text-5xl'}>GAME OVER!</CardTitle>
       </CardHeader>
       <Separator />
       <CardContent className={'flex flex-col items-center'}>
-        <p className={'text-3xl my-8'}>
+        <p className={'text-3xl my-6'}>
           Final Score: <span className={'text-primary'}>{score.current}</span>
         </p>
         <div className="text-xl grid grid-cols-2 gap-2">

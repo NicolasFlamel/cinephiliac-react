@@ -21,7 +21,6 @@ import {
 } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Field, FieldLabel } from '@/components/ui/field';
-import { isGameGenreType, isGameModeType } from '@/types';
 
 interface FormElements extends HTMLFormControlsCollection {
   game: HTMLInputElement;
@@ -39,14 +38,7 @@ export const HomePage = () => {
 
   const formSubmitHandler = (e: React.SubmitEvent<YourFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const gameMode = formData.get('game');
-    const gameGenre = formData.get('genre');
 
-    if (!isGameModeType(gameMode) || !isGameGenreType(gameGenre)) return;
-
-    setGameMode(gameMode);
-    setGameGenre(gameGenre);
     navigate('/game');
   };
 
@@ -74,10 +66,14 @@ export const HomePage = () => {
             <Field>
               <FieldLabel htmlFor={'game'}>Select a mode</FieldLabel>
               <Select
-                id={'game'}
-                name={'game'}
+                id="game"
+                name="game"
                 items={gameModes}
-                defaultValue={gameMode}
+                value={gameMode}
+                onValueChange={(v) => {
+                  if (!v) return;
+                  setGameMode(v);
+                }}
               >
                 <SelectTrigger className={'w-full'}>
                   <SelectValue placeholder={'Select a mode'} />
@@ -97,10 +93,14 @@ export const HomePage = () => {
             <Field>
               <FieldLabel htmlFor={'genre'}>Select a genre</FieldLabel>
               <Select
-                id={'genre'}
-                name={'genre'}
+                id="genre"
+                name="genre"
                 items={genres}
-                defaultValue={gameGenre}
+                value={gameGenre}
+                onValueChange={(v) => {
+                  if (!v) return;
+                  setGameGenre(v);
+                }}
               >
                 <SelectTrigger className={'w-full'}>
                   <SelectValue placeholder={'Select a genre'} />
