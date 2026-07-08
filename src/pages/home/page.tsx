@@ -44,7 +44,7 @@ export const HomePage = () => {
 
   return (
     <main className={'mx-4'}>
-      <Card className={'max-w-xl m-auto'}>
+      <Card className={'m-auto max-w-xl'}>
         <CardHeader>
           <CardTitle>Welcome to Cinephiliac!</CardTitle>
           <CardDescription>

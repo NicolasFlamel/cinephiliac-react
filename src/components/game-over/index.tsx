@@ -51,10 +51,10 @@ export const GameOver = ({ score }: GameProps) => {
       </CardHeader>
       <Separator />
       <CardContent className={'flex flex-col items-center'}>
-        <p className={'text-3xl my-6'}>
+        <p className={'my-6 text-3xl'}>
           Final Score: <span className={'text-primary'}>{score.current}</span>
         </p>
-        <div className="text-xl grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2 text-xl">
           <span>Game:</span>
           <span>{gameMode === 'Box-Office' ? 'Box Office' : 'Ratings'}</span>
 
@@ -63,7 +63,7 @@ export const GameOver = ({ score }: GameProps) => {
         </div>
       </CardContent>
       <CardFooter>
-        <form onSubmit={handleSubmit} className={'flex flex-col gap-4 w-full'}>
+        <form onSubmit={handleSubmit} className={'flex w-full flex-col gap-4'}>
           <Label htmlFor={'username'}>
             <span className="sr-only">Username</span>
           </Label>

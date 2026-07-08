@@ -13,7 +13,7 @@ function App() {
   const score = useRef<number>(0);
 
   return (
-    <section className="min-h-screen flex flex-col gap-8">
+    <section className="flex min-h-screen flex-col gap-8">
       <Header />
       <Routes>
         <Route

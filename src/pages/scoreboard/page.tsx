@@ -24,11 +24,11 @@ export const ScoreboardPage = () => {
   ] as const;
 
   return (
-    <main className={'flex flex-col gap-8 mx-4'}>
+    <main className={'mx-4 flex flex-col gap-8'}>
       {board.map(([mode, boardScores]) => (
         <section
           key={mode}
-          className={'flex flex-col gap-4 max-h-[min(100vh,500px)] py-4'}
+          className={'flex max-h-[min(100vh,500px)] flex-col gap-4 py-4'}
         >
           <h2 className="text-2xl font-bold text-inherit">
             {mode === 'Box-Office' ? 'Box Office Mode' : 'Ratings Mode'}

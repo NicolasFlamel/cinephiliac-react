@@ -4,15 +4,15 @@ import { cn } from '@/lib/utils';
 
 export const Header = () => {
   return (
-    <header className={'w-full bg-accent p-2 border-b'}>
+    <header className={'bg-accent w-full border-b p-2'}>
       <div
         className={cn(
-          'flex flex-wrap gap-4 max-w-5xl m-auto',
+          'm-auto flex max-w-5xl flex-wrap gap-4',
           'md:grid md:grid-cols-3',
         )}
       >
-        <h1 className="text-2xl font-bold w-full">Cinephiliac</h1>
-        <nav className={'flex gap-2 justify-center'}>
+        <h1 className="w-full text-2xl font-bold">Cinephiliac</h1>
+        <nav className={'flex justify-center gap-2'}>
           <LinkBtn to={'/'}>Home</LinkBtn>
           <LinkBtn to={'/scoreboard'}>Scoreboard</LinkBtn>
         </nav>

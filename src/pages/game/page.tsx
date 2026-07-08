@@ -33,7 +33,7 @@ export const GamePage = ({ score }: GameProps) => {
   else if (pairQuery.isError) return <Fallback error={pairQuery.error} />;
 
   return (
-    <main className="flex flex-col gap-8 items-center w-full max-w-3xl mx-auto my-8">
+    <main className="mx-auto my-8 flex w-full max-w-3xl flex-col items-center gap-8">
       <h2 className="max-w-max text-center">
         Does <em> {pairQuery.data[1].title} </em>
         have a higher or lower {gameMode} amount than
@@ -42,7 +42,7 @@ export const GamePage = ({ score }: GameProps) => {
       <MovieMotion
         moviePair={[firstMovie, secondMovie]}
         backupData={pairQuery.data}
-        className="grid divide-y-large md:grid-cols-2 md:gap-4 md:divide-y-0"
+        className="divide-y-large grid md:grid-cols-2 md:gap-4 md:divide-y-0"
       />
       <section className={'flex gap-8'}>
         <Button
