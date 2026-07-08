@@ -1,11 +1,11 @@
-import { Dispatch, MutableRefObject, SetStateAction } from 'react';
-import {
+import type { Dispatch, RefObject, SetStateAction } from 'react';
+import type {
   MovieDatabaseApiType,
   MovieDatabaseResultsType,
   TMDBApi,
   TMDBMovieData,
   TMDBExternalIds,
-} from './apiTypes';
+} from './api';
 
 const gameModes = ['Box-Office', 'Ratings'] as const;
 const genres = [
@@ -48,7 +48,7 @@ export type MovieIndexedDB = MovieDBWithoutStats | MovieDBWithStats;
 export type MovieList = MovieType | MovieIndexedDB;
 
 export interface GameProps {
-  score: MutableRefObject<number>;
+  score: RefObject<number>;
 }
 
 export interface ScoreData {

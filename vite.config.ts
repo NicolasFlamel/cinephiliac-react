@@ -1,23 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import viteTsconfigPaths from 'vite-tsconfig-paths';
-import checker from 'vite-plugin-checker';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
   base: '/cinephiliac-react/',
-  plugins: [
-    react(),
-    viteTsconfigPaths(),
-    checker({
-      typescript: {
-        tsconfigPath: 'tsconfig.app.json',
-      },
-      eslint: { lintCommand: 'eslint "./src/**/*.{ts,tsx}"' },
-      overlay: true,
-    }),
-  ],
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   server: {
     port: 3000,
+  },
+  build: {
+    rolldownOptions: {
+      output: {
+        codeSplitting: true,
+      },
+    },
   },
 });
