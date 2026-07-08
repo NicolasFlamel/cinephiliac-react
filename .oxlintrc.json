@@ -7,9 +7,9 @@
   },
   "overrides": [
     {
-      "files": ["src/components/ui/**"],
+      "files": ["src/components/ui/**", "src/context/**"],
       "rules": {
-        "react-refresh/only-export-components": "off"
+        "react/only-export-components": "off"
       }
     }
   ]
