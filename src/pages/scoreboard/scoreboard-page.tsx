@@ -11,7 +11,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-export const ScoreboardPage = () => {
+const ScoreboardPage = () => {
   const { scores, deleteScore } = useLocalScores();
 
   const boxOfficeScores = scores.filter(
@@ -95,3 +95,5 @@ const ScoreTable = ({ mode, scores, deleteScore }: ScoreTableProps) => {
     </Table>
   );
 };
+
+export default ScoreboardPage;

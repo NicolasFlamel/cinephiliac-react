@@ -31,7 +31,7 @@ interface YourFormElement extends HTMLFormElement {
   readonly elements: FormElements;
 }
 
-export const HomePage = () => {
+const HomePage = () => {
   const navigate = useNavigate();
   const { gameGenre, gameMode } = useGameState();
   const { setGameGenre, setGameMode } = useGameDispatch();
@@ -128,3 +128,5 @@ export const HomePage = () => {
     </main>
   );
 };
+
+export default HomePage;

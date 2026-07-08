@@ -14,7 +14,7 @@ import { Fallback } from '@/components/fallback';
 import { MovieMotion } from '@/components/movie-motion';
 import { ArrowBigUp, ArrowBigDown } from 'lucide-react';
 
-export const GamePage = ({ score }: GameProps) => {
+const GamePage = ({ score }: GameProps) => {
   const {
     gameMode,
     gameIsOver,
@@ -147,3 +147,5 @@ const useGame = (score: GameProps['score']) => {
     handleAnswerClick,
   };
 };
+
+export default GamePage;
