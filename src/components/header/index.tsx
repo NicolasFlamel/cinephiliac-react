@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 export const Header = () => {
   return (
-    <header className={'bg-accent w-full border-b p-2'}>
+    <header className={'bg-card text-card-foreground w-full border-b p-2'}>
       <div
         className={cn(
           'm-auto flex max-w-5xl flex-wrap gap-4',
