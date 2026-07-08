@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { genres, gameModes } from './data';
+import { genres, gameModes } from '@/assets/home.data';
 import { useGameDispatch, useGameState } from '@/context/game-context';
 import { Button } from '@/components/ui/button';
 import {

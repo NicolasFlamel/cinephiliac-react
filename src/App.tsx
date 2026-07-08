@@ -5,9 +5,9 @@ import { GameProvider } from '@/context/game-context';
 import { Header } from '@/components/header';
 import { Loading } from '@/components/loading';
 
-const HomePage = lazy(() => import('./pages/home/home-page'));
-const GamePage = lazy(() => import('./pages/game/game-page'));
-const ScoreboardPage = lazy(() => import('./pages/scoreboard/scoreboard-page'));
+const HomePage = lazy(() => import('./pages/home-page'));
+const GamePage = lazy(() => import('./pages/game-page'));
+const ScoreboardPage = lazy(() => import('./pages/scoreboard-page'));
 
 const queryClient = new QueryClient();
 
